@@ -1,6 +1,7 @@
 # Abigail Pinto - Portfolio Website
 
-![Portfolio Screenshot](C:\Users\Goddyteddy2\portfolio-website\images)
+![Portfolio Preview](https://raw.githubusercontent.com/Abigail-Pinto1/portfolio-website/images/Screenshot(52).png)
+
 
 A modern, responsive portfolio website showcasing Abigail Pinto's work, skills, and professional journey as an aspiring software developer.
 
