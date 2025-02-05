@@ -3,51 +3,164 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title>Abigail's Portfolio</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <!-- Custom CSS for Dark Mode -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Dark Mode Styles */
+    :root {
+      --electric-blue: #00f3ff;
+      --neon-pink: #ff00ff;
+      --vivid-purple: #9400d3;
+      --sunshine-yellow: #ffd700;
+      --hot-red: #ff0055;
+    }
+
+    * {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(45deg, #f8f9fa, #ffffff);
+      min-height: 100vh;
+    }
+
+    /* Vibrant Navbar */
+    .navbar {
+      background: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      color: var(--vivid-purple) !important;
+      font-size: 1.5rem;
+    }
+
+    .nav-link {
+      color: #333 !important;
+      font-weight: 500;
+      margin: 0 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--electric-blue) !important;
+      transform: translateY(-2px);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding: 8rem 0 4rem;
+      background: linear-gradient(135deg, var(--electric-blue), var(--neon-pink));
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+      margin-bottom: 4rem;
+    }
+
+    .hero-section h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-section .lead {
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    /* Vibrant Button */
+    .btn-vibrant {
+      background: linear-gradient(45deg, var(--hot-red), var(--vivid-purple));
+      border: none;
+      padding: 1rem 2.5rem;
+      color: white !important;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .btn-vibrant:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255, 0, 85, 0.4);
+    }
+
+    /* Project Cards */
+    .project-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .project-card img {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-card .card-body {
+      padding: 1.5rem;
+    }
+
+    /* Dark Mode Adjustments */
     .dark-mode {
-      background-color: #121212;
+      background: #121212;
       color: #ffffff;
     }
-    .dark-mode .navbar-light {
-      background-color: #1f1f1f !important;
-      color: #ffffff;
+
+    .dark-mode .navbar {
+      background: rgba(18, 18, 18, 0.95) !important;
     }
-    /* Ensure navbar links and brand text turn white */
-    .dark-mode .navbar-light .navbar-nav .nav-link,
-    .dark-mode .navbar-brand {
-      color: #ffffff !important;
+
+    .dark-mode .nav-link {
+      color: #fff !important;
     }
-    .dark-mode .card {
-      background-color: #1f1f1f;
-      color: #ffffff;
+
+    .dark-mode .project-card {
+      background: #1f1f1f;
     }
-    .dark-mode .btn-outline-dark {
-      border-color: #ffffff;
-      color: #ffffff;
+
+    footer {
+      background: linear-gradient(135deg, var(--vivid-purple), var(--hot-red));
+      color: white;
+      padding: 2rem 0;
+      margin-top: 4rem;
     }
-    .dark-mode .btn-outline-dark:hover {
-      background-color: #ffffff;
-      color: #121212;
+
+    @media (max-width: 768px) {
+      .hero-section h1 {
+        font-size: 2.5rem;
+      }
+      
+      .navbar-nav {
+        margin-top: 1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Navbar with Toggle Button -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">My Portfolio</a>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Abigail Pinto</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto">
+        <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             <a class="nav-link" href="index.html">Home</a>
           </li>
@@ -55,30 +168,56 @@
             <a class="nav-link" href="about.html">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="projects.html">Projects</a>
+            <a class="nav-link" href="Portfolio.html">Portfolio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Contact</a>
           </li>
         </ul>
-        <!-- Dark Mode Toggle Button -->
-        <button id="darkModeToggle" class="btn btn-outline-dark">
-          <i class="bi bi-moon-fill"></i> Dark Mode
+        <button id="darkModeToggle" class="btn btn-vibrant ms-3">
+          <i class="bi bi-moon-fill"></i> Dark
         </button>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section class="bg-primary text-white text-center py-5">
-    <h1>Welcome to My Portfolio</h1>
-    <p class="lead">I'm a web developer passionate about creating amazing websites.</p>
-    <a href="about.html" class="btn btn-light btn-lg">Learn More</a>
+  <section class="hero-section text-center text-white">
+    <div class="container">
+      <h1>A Webmaster & Aspiring Software Developer</h1>
+      <p class="lead">Turning innovative ideas into digital reality through cutting-edge development and design.</p>
+      <a href="Portfolio.html" class="btn btn-vibrant">View My Work</a>
+    </div>
   </section>
 
+  <!-- Portfolio Grid -->
+  <div class="container">
+    <div class="row">
+      <!-- Project 1 -->
+      <div class="col-md-4">
+        <div class="project-card">
+          <img src="images//Project 1.png" class="card-img-top" alt="Project 1">
+          <div class="card-body">
+            <h5 class="card-title">Famah Healthcare Services</h5>
+            <p class="card-text">A Modern web platform built with React & Node.js and  managed with Word Press</p>
+            <a href="Portfolio.html" class="btn btn-vibrant">View Project</a>
+          </div>
+        </div>
+      </div>
+      <!-- Add more project cards -->
+    </div>
+  </div>
+
   <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
-    <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+  <footer class="text-center">
+    <div class="container">
+      <p>&copy; 2025 Abigail Pinto. All rights reserved.</p>
+      <div class="social-links mt-3">
+        <a href="#" class="text-white mx-2"><i class="bi bi-github"></i></a>
+        <a href="#" class="text-white mx-2"><i class="bi bi-linkedin"></i></a>
+        <a href="#" class="text-white mx-2"><i class="bi bi-twitter-x"></i></a>
+      </div>
+    </div>
   </footer>
 
   <!-- Bootstrap JS -->
@@ -89,27 +228,16 @@
       const darkModeToggle = document.getElementById('darkModeToggle');
       const body = document.body;
 
-      // Check localStorage for dark mode preference
       const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+      if (isDarkMode) body.classList.add('dark-mode');
 
-      // Apply dark mode if enabled
-      if (isDarkMode) {
-        body.classList.add('dark-mode');
-        darkModeToggle.innerHTML = '<i class="bi bi-sun-fill"></i> Light Mode';
-      }
-
-      // Toggle dark mode
       darkModeToggle.addEventListener('click', () => {
         body.classList.toggle('dark-mode');
         const isDarkModeEnabled = body.classList.contains('dark-mode');
-
-        // Save preference to localStorage
         localStorage.setItem('darkMode', isDarkModeEnabled ? 'enabled' : 'disabled');
-
-        // Update button text
         darkModeToggle.innerHTML = isDarkModeEnabled
-          ? '<i class="bi bi-sun-fill"></i> Light Mode'
-          : '<i class="bi bi-moon-fill"></i> Dark Mode';
+          ? '<i class="bi bi-sun-fill"></i> Light'
+          : '<i class="bi bi-moon-fill"></i> Dark';
       });
     });
   </script>

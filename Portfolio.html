@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Abigail</title>
+  <title>Abigail's Portfolio</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
@@ -53,51 +53,78 @@
       transform: translateY(-2px);
     }
 
-    /* About Section */
-    .about-section {
+    /* Portfolio Section */
+    .portfolio-section {
       padding: 8rem 0 4rem;
       margin-top: 4rem;
     }
 
-    .about-section h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--vivid-purple);
-      margin-bottom: 2rem;
-    }
-
-    .profile-img {
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease;
-    }
-
-    .profile-img:hover {
-      transform: scale(1.03);
-    }
-
-    /* Vibrant Button */
-    .btn-vibrant {
-      background: linear-gradient(45deg, var(--hot-red), var(--vivid-purple));
+    .project-card {
       border: none;
-      padding: 1rem 2.5rem;
-      color: white !important;
-      border-radius: 50px;
-      font-weight: 600;
+      border-radius: 15px;
+      overflow: hidden;
       transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+      background: white;
+      position: relative;
     }
 
-    .btn-vibrant:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(255, 0, 85, 0.4);
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, var(--hot-red), var(--vivid-purple));
+      z-index: -1;
+      border-radius: 17px;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .project-card img {
+      height: 250px;
+      object-fit: cover;
+      border-bottom: 3px solid var(--vivid-purple);
+    }
+
+    .project-card .card-body {
+      padding: 1.5rem;
+    }
+
+    .project-links {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .project-links a {
+      background: linear-gradient(45deg, var(--vivid-purple), var(--hot-red));
+      color: white !important;
+      padding: 0.5rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      margin: 0.5rem 0;
+    }
+
+    .project-links a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 3px 10px rgba(148, 0, 211, 0.3);
     }
 
     /* Dark Mode Adjustments */
     .dark-mode {
       background: #121212;
       color: #ffffff;
+    }
+
+    .dark-mode .lead {
+  color: #ffffff !important;
     }
 
     .dark-mode .navbar {
@@ -108,8 +135,8 @@
       color: #fff !important;
     }
 
-    .dark-mode .about-section h2 {
-      color: var(--electric-blue);
+    .dark-mode .project-card {
+      background: #1f1f1f;
     }
 
     footer {
@@ -119,13 +146,32 @@
       margin-top: 4rem;
     }
 
+    .lead {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 2rem auto;
+      color: #444;
+    }
+
+    h2 {
+      color: var(--vivid-purple);
+      font-weight: 700;
+      text-align: center;
+      margin: 3rem 0;
+    }
+
     @media (max-width: 768px) {
-      .about-section {
+      .portfolio-section {
         padding: 6rem 0 2rem;
       }
       
       .navbar-nav {
         margin-top: 1rem;
+      }
+      
+      .project-card {
+        margin: 1rem;
       }
     }
   </style>
@@ -160,26 +206,53 @@
     </div>
   </nav>
 
-  <!-- About Section -->
-  <section class="about-section">
-    <div class="container my-5">
-      <h2 class="text-center mb-5">About Me</h2>
-      <div class="row align-items-center">
-        <div class="col-md-6 mb-4">
-          <img src="images/Abigail Pinto.jpg" alt="Abigail Pinto" class="profile-img img-fluid">
-        </div>
-        <div class="col-md-6">
-          <p class="lead mb-4">
-            Hi, I'm Abigail Korkor Pinto, an aspiring software developer with a passion for creating beautiful and functional websites and applications.
-          </p>
-          <p class="mb-4">
-            I am a 28-year-old Ghanaian living in the Greater-Accra region, Teshie. I completed my high school education in 2014 and earned my first degree in 2019. My journey in tech began as an IT Support Specialist at IS Evolution from 2019 to 2020.
-          </p>
-          <p>
-            Currently, I'm taking my next big step toward becoming a skilled software developer by participating in specialized STEM programs to enhance my knowledge and technical skillset. Welcome to my portfolio – I hope you enjoy exploring my work!
-          </p>
-          <div class="mt-4">
-            <a href="Portfolio.html" class="btn btn-vibrant mt-3">View My Work</a>
+  <!-- Portfolio Section -->
+  <section class="portfolio-section">
+    <div class="container">
+      <p class="lead text-center">
+        Abigail Korkor Pinto is an aspiring Software Developer with the
+         hope of becoming one of the best in the I.T. industry. She studied 
+         information technology in the university of Ghana and looking forward to 
+         broadening her knowledge in the field of software engineering She worked as
+          an IT Support for the same university in the year 2018-2019, during this period 
+          she learnt more about computer networking which also helped her understanding on how 
+          computers connect with each other on a server. she loves how technology connects the world, 
+          and she is keen on joining this project to develop and secure computer software and network.
+           To be a good software developer, she will need more skills and knowledge in both front-end and
+            back-end frameworks, and with the help of this tech accelerator program, she believes she will have 
+            a better standing on her journey to success.
+      </p>
+
+      <h2>Featured Projects</h2>
+      
+      <div class="row">
+        <div class="col-md-4">
+          <div class="project-card">
+            <img src="images/Wordpress.jpg" class="card-img-top" alt="WordPress Project">
+            <div class="card-body">
+              <h5 class="card-title">Wordpress Websites</h5>
+              <p class="card-text">I create, launch and manage some company 
+                websites using wordpress. I take charge of all sales made online and also company mails.
+
+                This are some websites I have created and managed:</p>
+              <ul class="project-links">
+                <li>
+                  <a href="http://famahhealthcareservices.com" target="_blank">
+                    <i class="bi bi-globe"></i> Famah Healthcare Services
+                  </a>
+                </li>
+                <li>
+                  <a href="http://equationconnects.com" target="_blank">
+                    <i class="bi bi-globe"></i> Equation Connects
+                  </a>
+                </li>
+                <li>
+                  <a href="http://cilaluxbeautyempires.com" target="_blank">
+                    <i class="bi bi-globe"></i> Cilalux Beauty Empires
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

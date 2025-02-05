@@ -3,51 +3,178 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title>Contact Abigail</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <!-- Custom CSS for Dark Mode -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Dark Mode Styles */
+    :root {
+      --electric-blue: #00f3ff;
+      --neon-pink: #ff00ff;
+      --vivid-purple: #9400d3;
+      --sunshine-yellow: #ffd700;
+      --hot-red: #ff0055;
+    }
+
+    * {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(45deg, #f8f9fa, #ffffff);
+      min-height: 100vh;
+    }
+
+    /* Vibrant Navbar */
+    .navbar {
+      background: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      color: var(--vivid-purple) !important;
+      font-size: 1.5rem;
+    }
+
+    .nav-link {
+      color: #333 !important;
+      font-weight: 500;
+      margin: 0 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--electric-blue) !important;
+      transform: translateY(-2px);
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 8rem 0 4rem;
+      margin-top: 4rem;
+    }
+
+    .contact-card {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .form-control {
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      border-color: var(--vivid-purple);
+      box-shadow: 0 0 10px rgba(148, 0, 211, 0.1);
+    }
+
+    /* Contact Buttons */
+    .contact-methods {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 3rem 0;
+    }
+
+    .contact-btn {
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .phone-btn {
+      background: linear-gradient(45deg, var(--hot-red), var(--sunshine-yellow));
+      color: white !important;
+    }
+
+    .whatsapp-btn {
+      background: linear-gradient(45deg, #25D366, #128C7E);
+      color: white !important;
+    }
+
+    .linkedin-btn {
+      background: linear-gradient(45deg, #0077B5, #00A0DC);
+      color: white !important;
+    }
+
+    .contact-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Dark Mode Adjustments */
     .dark-mode {
-      background-color: #121212;
+      background: #121212;
       color: #ffffff;
     }
-    .dark-mode .navbar-light {
-      background-color: #1f1f1f !important;
-      color: #ffffff;
+
+    .dark-mode .navbar {
+      background: rgba(18, 18, 18, 0.95) !important;
     }
-    /* Ensure navbar links and brand text turn white */
-    .dark-mode .navbar-light .navbar-nav .nav-link,
-    .dark-mode .navbar-brand {
-      color: #ffffff !important;
+
+    .dark-mode .nav-link {
+      color: #fff !important;
     }
-    .dark-mode .card {
-      background-color: #1f1f1f;
-      color: #ffffff;
+
+    .dark-mode .contact-card {
+      background: #1f1f1f;
     }
-    .dark-mode .btn-outline-dark {
-      border-color: #ffffff;
-      color: #ffffff;
+
+    .dark-mode .form-control {
+      background-color: #2d2d2d;
+      border-color: #444;
+      color: white;
     }
-    .dark-mode .btn-outline-dark:hover {
-      background-color: #ffffff;
-      color: #121212;
+
+    footer {
+      background: linear-gradient(135deg, var(--vivid-purple), var(--hot-red));
+      color: white;
+      padding: 2rem 0;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      .contact-section {
+        padding: 6rem 0 2rem;
+      }
+      
+      .navbar-nav {
+        margin-top: 1rem;
+      }
+      
+      .contact-card {
+        margin: 1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Navbar with Toggle Button -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">My Portfolio</a>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Abigail Pinto</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto">
+        <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             <a class="nav-link" href="index.html">Home</a>
           </li>
@@ -55,44 +182,72 @@
             <a class="nav-link" href="about.html">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="projects.html">Projects</a>
+            <a class="nav-link" href="Portfolio.html">Portfolio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Contact</a>
           </li>
         </ul>
-        <!-- Dark Mode Toggle Button -->
-        <button id="darkModeToggle" class="btn btn-outline-dark">
-          <i class="bi bi-moon-fill"></i> Dark Mode
+        <button id="darkModeToggle" class="btn btn-vibrant ms-3">
+          <i class="bi bi-moon-fill"></i> Dark
         </button>
       </div>
     </div>
   </nav>
 
-  <!-- Contact Form Section -->
-  <section class="container my-5">
-    <h2>Contact Me</h2>
-    <form action="#" method="POST">
-      <div class="mb-3">
-        <label for="name" class="form-label">Name</label>
-        <input type="text" class="form-control" id="name" required>
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-card">
+        <h2 class="text-center mb-4">Contact Me</h2>
+        <form action="#" method="POST">
+          <div class="mb-4">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
+          <div class="mb-4">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <div class="mb-4">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="5" required></textarea>
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-vibrant">Send Message</button>
+          </div>
+        </form>
+
+        <div class="contact-methods">
+          <a href="tel:0554078066" class="contact-btn phone-btn">
+            <i class="bi bi-telephone"></i> Call Me
+          </a>
+          <a href="https://wa.me/0201546166" class="contact-btn whatsapp-btn">
+            <i class="bi bi-whatsapp"></i> WhatsApp
+          </a>
+          <a href="https://www.linkedin.com/in/abigail-pinto-838836128" 
+             class="contact-btn linkedin-btn"
+             target="_blank">
+            <i class="bi bi-linkedin"></i> LinkedIn
+          </a>
+        </div>
       </div>
-      <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" required>
-      </div>
-      <div class="mb-3">
-        <label for="message" class="form-label">Message</label>
-        <textarea class="form-control" id="message" rows="3" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
-    <p>&copy; 2023 My Portfolio. All rights reserved.</p>
-  </footer>
+<footer class="text-center">
+  <div class="container">
+    <p>&copy; 2025 Abigail Pinto. All rights reserved.</p>
+    <div class="social-links mt-3">
+      <a href="https://github.com/goddyteddy" class="text-white mx-2"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/abigail-pinto-838836128?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-white mx-2"><i class="bi bi-linkedin"></i></a>
+      <a href="https://wa.me/0201546166" class="text-white mx-2" target="_blank">
+        <i class="bi bi-whatsapp"></i>
+      </a>
+    </div>
+  </div>
+</footer>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -102,27 +257,16 @@
       const darkModeToggle = document.getElementById('darkModeToggle');
       const body = document.body;
 
-      // Check localStorage for dark mode preference
       const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+      if (isDarkMode) body.classList.add('dark-mode');
 
-      // Apply dark mode if enabled
-      if (isDarkMode) {
-        body.classList.add('dark-mode');
-        darkModeToggle.innerHTML = '<i class="bi bi-sun-fill"></i> Light Mode';
-      }
-
-      // Toggle dark mode
       darkModeToggle.addEventListener('click', () => {
         body.classList.toggle('dark-mode');
         const isDarkModeEnabled = body.classList.contains('dark-mode');
-
-        // Save preference to localStorage
         localStorage.setItem('darkMode', isDarkModeEnabled ? 'enabled' : 'disabled');
-
-        // Update button text
         darkModeToggle.innerHTML = isDarkModeEnabled
-          ? '<i class="bi bi-sun-fill"></i> Light Mode'
-          : '<i class="bi bi-moon-fill"></i> Dark Mode';
+          ? '<i class="bi bi-sun-fill"></i> Light'
+          : '<i class="bi bi-moon-fill"></i> Dark';
       });
     });
   </script>
