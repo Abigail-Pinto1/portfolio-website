@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abigail's Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --electric-blue: #00f3ff;
+      --neon-pink: #ff00ff;
+      --vivid-purple: #9400d3;
+      --sunshine-yellow: #ffd700;
+      --hot-red: #ff0055;
+    }
+
+    * {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(45deg, #f8f9fa, #ffffff);
+      min-height: 100vh;
+    }
+
+    /* Vibrant Navbar */
+    .navbar {
+      background: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      color: var(--vivid-purple) !important;
+      font-size: 1.5rem;
+    }
+
+    .nav-link {
+      color: #333 !important;
+      font-weight: 500;
+      margin: 0 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--electric-blue) !important;
+      transform: translateY(-2px);
+    }
+
+    /* Portfolio Section */
+    .portfolio-section {
+      padding: 8rem 0 4rem;
+      margin-top: 4rem;
+    }
+
+    .project-card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+      background: white;
+      position: relative;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, var(--hot-red), var(--vivid-purple));
+      z-index: -1;
+      border-radius: 17px;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .project-card img {
+      height: 250px;
+      object-fit: cover;
+      border-bottom: 3px solid var(--vivid-purple);
+    }
+
+    .project-card .card-body {
+      padding: 1.5rem;
+    }
+
+    .project-links {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .project-links a {
+      background: linear-gradient(45deg, var(--vivid-purple), var(--hot-red));
+      color: white !important;
+      padding: 0.5rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      margin: 0.5rem 0;
+    }
+
+    .project-links a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 3px 10px rgba(148, 0, 211, 0.3);
+    }
+
+    /* Dark Mode Adjustments */
+    .dark-mode {
+      background: #121212;
+      color: #ffffff;
+    }
+
+    .dark-mode .lead {
+  color: #ffffff !important;
+    }
+
+    .dark-mode .navbar {
+      background: rgba(18, 18, 18, 0.95) !important;
+    }
+
+    .dark-mode .nav-link {
+      color: #fff !important;
+    }
+
+    .dark-mode .project-card {
+      background: #1f1f1f;
+    }
+
+    footer {
+      background: linear-gradient(135deg, var(--vivid-purple), var(--hot-red));
+      color: white;
+      padding: 2rem 0;
+      margin-top: 4rem;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 2rem auto;
+      color: #444;
+    }
+
+    h2 {
+      color: var(--vivid-purple);
+      font-weight: 700;
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .portfolio-section {
+        padding: 6rem 0 2rem;
+      }
+      
+      .navbar-nav {
+        margin-top: 1rem;
+      }
+      
+      .project-card {
+        margin: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Abigail Pinto</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Portfolio.html">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+        <button id="darkModeToggle" class="btn btn-vibrant ms-3">
+          <i class="bi bi-moon-fill"></i> Dark
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Portfolio Section -->
+  <section class="portfolio-section">
+    <div class="container">
+      <p class="lead text-center">
+        Abigail Korkor Pinto is an aspiring Software Developer with the
+         hope of becoming one of the best in the I.T. industry. She studied 
+         information technology in the university of Ghana and looking forward to 
+         broadening her knowledge in the field of software engineering She worked as
+          an IT Support for the same university in the year 2018-2019, during this period 
+          she learnt more about computer networking which also helped her understanding on how 
+          computers connect with each other on a server. she loves how technology connects the world, 
+          and she is keen on joining this project to develop and secure computer software and network.
+           To be a good software developer, she will need more skills and knowledge in both front-end and
+            back-end frameworks, and with the help of this tech accelerator program, she believes she will have 
+            a better standing on her journey to success.
+      </p>
+
+      <h2>Featured Projects</h2>
+      
+      <div class="row">
+        <div class="col-md-4">
+          <div class="project-card">
+            <img src="images/Wordpress.jpg" class="card-img-top" alt="WordPress Project">
+            <div class="card-body">
+              <h5 class="card-title">Wordpress Websites</h5>
+              <p class="card-text">I create, launch and manage some company 
+                websites using wordpress. I take charge of all sales made online and also company mails.
+
+                This are some websites I have created and managed:</p>
+              <ul class="project-links">
+                <li>
+                  <a href="http://famahhealthcareservices.com" target="_blank">
+                    <i class="bi bi-globe"></i> Famah Healthcare Services
+                  </a>
+                </li>
+                <li>
+                  <a href="http://equationconnects.com" target="_blank">
+                    <i class="bi bi-globe"></i> Equation Connects
+                  </a>
+                </li>
+                <li>
+                  <a href="http://cilaluxbeautyempires.com" target="_blank">
+                    <i class="bi bi-globe"></i> Cilalux Beauty Empires
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <div class="container">
+      <p>&copy; 2025 Abigail Pinto. All rights reserved.</p>
+      <div class="social-links mt-3">
+        <a href="#" class="text-white mx-2"><i class="bi bi-github"></i></a>
+        <a href="#" class="text-white mx-2"><i class="bi bi-linkedin"></i></a>
+        <a href="#" class="text-white mx-2"><i class="bi bi-twitter-x"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Dark Mode Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const darkModeToggle = document.getElementById('darkModeToggle');
+      const body = document.body;
+
+      const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+      if (isDarkMode) body.classList.add('dark-mode');
+
+      darkModeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        const isDarkModeEnabled = body.classList.contains('dark-mode');
+        localStorage.setItem('darkMode', isDarkModeEnabled ? 'enabled' : 'disabled');
+        darkModeToggle.innerHTML = isDarkModeEnabled
+          ? '<i class="bi bi-sun-fill"></i> Light'
+          : '<i class="bi bi-moon-fill"></i> Dark';
+      });
+    });
+  </script>
+</body>
+</html>
